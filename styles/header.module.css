@@ -1,0 +1,11 @@
+.container {
+    width: 100%;
+    position: fixed;
+    background: #aaaaaa;
+}
+.hideContainer {
+    width: 100%;
+    position: relative;
+    background: #aaaaaa;
+    opacity: 0;
+}

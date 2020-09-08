@@ -4,13 +4,69 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0rem;
+  height: 200vh;
 }
+
+h1 {
+  line-height: 3rem;
+  font-size: 3rem;
+  margin: 0;
+  padding: 0.5rem;
+}
+h2 {
+  line-height: 2.5rem;
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 0.5rem;
+}
+h3 {
+  line-height: 2rem;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0.5rem;
+}
+h4 {
+  line-height: 1.8rem;
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0.5rem;
+}
+h5 {
+  line-height: 1.5rem;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0.5rem;
+}
+p {
+  line-height: 1rem;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0.5rem;
+}
+
 
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
+  line-height: 1rem;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0.5rem;
+  opacity: 0.6;
+}
+a:hover {
+  opacity: 1;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
 }
