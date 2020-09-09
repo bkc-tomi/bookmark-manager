@@ -8,7 +8,7 @@ export default function Index() {
                 <div className={ Styles.articleArea }>
                     <img src="/pc-user.png" className={ Styles.pcUser } />
                     <br />
-                    <h2>ブックマークを快適にしませんか？</h2>
+                    <h2 className={ Styles.title }>ブックマークを快適にしませんか？</h2>
                     <ul>
                         <li>ブックマークをたくさんし過ぎた…</li>
                         <li>探したいブックマークが見つからない</li>
