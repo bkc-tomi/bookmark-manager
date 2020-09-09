@@ -13,4 +13,10 @@
 
 .title {
     margin: 0 0.5rem;
+    display: inline-block;
+}
+
+.icon {
+    float: right;
+    margin: 0.3rem 1.5rem;
 }

@@ -1,17 +1,38 @@
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import LoginButton from "./loginButton";
+import { signinWithGoogle, signinWithTwitter, signinWithGithub } from "../firebase/auth";
 import Styles from "../styles/login.module.css";
 
 export function Login() {
-    const handleLoginGoogle = () => {
-        console.log("google");
+    const router = useRouter();
+    const handleLoginGoogle = async() => {
+        const [loginCheck, user] = await signinWithGoogle();
+        if (loginCheck) {
+            console.log(user);
+            router.push("/[user]", `/${ user.uid }`);
+        } else {
+            alert("ログイン処理が上手く行かなかったようです。もう一度お試しください。");
+        }
     }
-    const handleLoginTwitter = () => {
-        console.log("twitter");
+    const handleLoginTwitter = async() => {
+        const [loginCheck, user] = await signinWithTwitter();
+        if (loginCheck) {
+            console.log(user);
+            router.push("/[user]", `/${ user.uid }`);
+        } else {
+            alert("ログイン処理が上手く行かなかったようです。もう一度お試しください。");
+        }
     }
-    const hadleLoginGithub = () => {
-        console.log("github");
+    const hadleLoginGithub = async() => {
+        const [loginCheck, user] = await signinWithGithub();
+        if (loginCheck) {
+            console.log(user);
+            router.push("/[user]", `/${ user.uid }`);
+        } else {
+            alert("ログイン処理が上手く行かなかったようです。もう一度お試しください。");
+        }
     }
+
     return (
         <div className={ Styles.loginBG }>
             <h3>ログイン</h3>

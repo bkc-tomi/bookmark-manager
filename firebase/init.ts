@@ -7,7 +7,7 @@ export let FBdb:firebase.firestore.Firestore;
 export let FBstorage:firebase.storage.Storage;
 export let googleProvider:firebase.auth.GoogleAuthProvider;
 export let twitterProvider:firebase.auth.TwitterAuthProvider;
-export let FBadmin;
+export let githubProvider:firebase.auth.GithubAuthProvider;
 
 try {
     const firebaseConfig = {
@@ -29,6 +29,7 @@ try {
     FBstorage       = firebase.storage();
     googleProvider  = new firebase.auth.GoogleAuthProvider();
     twitterProvider = new firebase.auth.TwitterAuthProvider();
+    githubProvider  = new firebase.auth.GithubAuthProvider();
     FB              = firebase;
     console.log("firebase init!");
 } catch (error) {
