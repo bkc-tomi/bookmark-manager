@@ -1,4 +1,5 @@
 import Layout from "../components/layout";
+import { Login } from "../components/login";
 import Styles from "../styles/index.module.css";
 export default function Index() {
     return (
@@ -25,15 +26,7 @@ export default function Index() {
                     <p></p>
                 </div>
                 <div className={ Styles.loginArea }>
-                    <div className={ Styles.loginBG }>
-                        <h3>ログイン</h3>
-                        <p>
-                            まずはログインしましょう。わざわざアカウントを作る必要はありません。
-                            ご利用になられているサービスからログインを行うことが出来ます。
-                            これらのサービスを利用してログインするので、セキュリティーも万全です。
-                        </p>
-                    </div>
-                    
+                    <Login />
                 </div>
             </div> 
         </Layout>
