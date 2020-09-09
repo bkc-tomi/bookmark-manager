@@ -1,11 +1,16 @@
 .container {
     width: 100%;
     position: fixed;
-    background: #aaaaaa;
+    background: linear-gradient(to right, #11998e, #38ef7d);
+    z-index: 10000;
 }
 .hideContainer {
     width: 100%;
     position: relative;
     background: #aaaaaa;
     opacity: 0;
+}
+
+.title {
+    margin: 0 0.5rem;
 }

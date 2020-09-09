@@ -11,15 +11,14 @@ export const SiteTitle = "ブックマークマネージャー(仮)"
 export default function Layout({ children }:{ children: React.ReactNode }) {
     useEffect(() => {
         (async() => {
-            await FB.auth().onAuthStateChanged((user: firebase.User) => {
+            await FB.auth().onAuthStateChanged((user:firebase.User) => {
                 if (user) {
-                    console.log("login:", user.displayName);
+                    console.log("login:" + user.displayName)
                 } else {
-                    console.log("no one logged in.");
+                    console.log("no one logged in.")
                 }
             });
-        });
-        console.log("do");
+        })();
     }, []);
     
     return (

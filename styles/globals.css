@@ -7,7 +7,9 @@ body {
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0rem;
-  height: 200vh;
+  background: rgb(0, 187, 72);
+  background: #EAFDF2;
+  color: #16776f;
 }
 
 h1 {
