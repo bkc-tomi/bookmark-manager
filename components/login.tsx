@@ -8,7 +8,6 @@ export function Login() {
     const handleLoginGoogle = async() => {
         const [loginCheck, user] = await signinWithGoogle();
         if (loginCheck) {
-            console.log(user);
             router.push("/[user]", `/${ user.uid }`);
         } else {
             alert("ログイン処理が上手く行かなかったようです。もう一度お試しください。");
@@ -17,7 +16,6 @@ export function Login() {
     const handleLoginTwitter = async() => {
         const [loginCheck, user] = await signinWithTwitter();
         if (loginCheck) {
-            console.log(user);
             router.push("/[user]", `/${ user.uid }`);
         } else {
             alert("ログイン処理が上手く行かなかったようです。もう一度お試しください。");
@@ -26,7 +24,6 @@ export function Login() {
     const hadleLoginGithub = async() => {
         const [loginCheck, user] = await signinWithGithub();
         if (loginCheck) {
-            console.log(user);
             router.push("/[user]", `/${ user.uid }`);
         } else {
             alert("ログイン処理が上手く行かなかったようです。もう一度お試しください。");

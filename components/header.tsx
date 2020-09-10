@@ -27,8 +27,8 @@ export default function Header() {
                 <header className={ Styles.container }>
                     <div className={ Styles.title }>
                         <Svg
-                            width={ 200 }
-                            height={ 60 }
+                            width={ 180 }
+                            height={ 50 }
                             rotate={ 0 }
                         >
                             <svg viewBox="0 0 1200 350">
@@ -62,15 +62,15 @@ export default function Header() {
                     <div className={ Styles.icon }>
                         <UserIcon 
                             img={ user.photoURL }
-                            size={ 50 }
+                            size={ 45 }
                         />
                     </div>
                 </header>
                 <div className={ Styles.hideContainer }>
                     <div>
                         <Svg
-                            width={ 200 }
-                            height={ 65 }
+                            width={ 180 }
+                            height={ 50 }
                             rotate={ 0 }
                         >
                             <svg viewBox="0 0 1200 350">

@@ -7,6 +7,8 @@ export default function AddBookmarkModal() {
     const [title, setTitle] = useState("");
     const [url, setUrl]     = useState("");
     const [desc, setDesc]   = useState(""); // ブックマークの説明
+    const [tag, setTag]     = useState("");
+    const [tags, setTags]   = useState<string[]>([]); // ブックマークの説明
 
     // モーダルを開く
     const handleOpen = () => {
@@ -29,6 +31,35 @@ export default function AddBookmarkModal() {
         setDesc(event.target.value as string);
     }
 
+    const handleTag = (event:React.ChangeEvent<{ value: unknown }>) => {
+        setTag(event.target.value as string);
+    }
+
+    const joinTags = (event:React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === "Enter") {
+            const tempTags = [...tags];
+            if (!tempTags.includes(tag)) {
+                tempTags.push(tag);
+                setTags(tempTags);
+                setTag("");
+            } else {
+                alert("すでに登録しているタグです。");
+            }
+        }
+    }
+
+    const clearTag = (event:React.MouseEvent<HTMLParagraphElement> ) => {
+        // @ts-ignore
+        const tag = event.target.title;
+        const tempTags = [...tags];
+        const t = tempTags.filter(tempTag => tempTag !== tag);
+        setTags(t);
+    }
+
+    const submitBookmark = () => {
+        console.log("submit");
+    }
+
     return (
         <>
             <div 
@@ -37,7 +68,7 @@ export default function AddBookmarkModal() {
             >
                 <svg viewBox="0 0 100 100">
                 <defs/>
-                <g id="レイヤー 1" opacity="1" fill="#28ff65">
+                <g id="レイヤー 1" opacity="1" fill="#16776f">
                 <path d="M3.33454+49.8404C3.33454+24.195+24.1242+3.40541+49.7695+3.40541C75.4148+3.40541+96.2044+24.195+96.2044+49.8404C96.2044+75.4857+75.4148+96.2753+49.7695+96.2753C24.1242+96.2753+3.33454+75.4857+3.33454+49.8404Z"/>
                 </g>
                 <g id="レイヤー 2">
@@ -64,12 +95,47 @@ export default function AddBookmarkModal() {
                     </div>
                     <div className={ Styles.inputDiv }>
                         <p>URL</p>
-                        <input className={ Styles.input } type="url" name="site-name" value={ url } onChange={ handleUrl }/> 
+                        <input className={ Styles.input } type="url" name="site-url" value={ url } onChange={ handleUrl }/> 
                     </div>
                     <div className={ Styles.inputDiv }>
                         <p>説明</p>
-                        <input className={ Styles.input } type="text" name="site-name" value={ desc } onChange={ handleDesc }/>
+                        <input className={ Styles.input } type="text" name="site-desc" value={ desc } onChange={ handleDesc }/>
                     </div>
+                    <div className={ Styles.inputDiv }>
+                        <p>タグ</p>
+                        <div className={ Styles.tagDiv }>
+                            {
+                                tags.map((tag, key) => {
+                                    return (
+                                        <div 
+                                            className={ Styles.tagBtn }
+                                            key={ key }
+                                        >
+                                            <p className={ Styles.tagTitle }>{ tag }</p>
+                                            <p 
+                                                className={ Styles.clear }
+                                                onClick={ clearTag }
+                                                title={ tag } 
+                                            >×</p>
+                                        </div>
+                                    );
+                                })
+                            }
+                            <input 
+                                className={ Styles.tag } 
+                                type="text" name="site-tag" value={ tag } 
+                                onChange={ handleTag }
+                                onKeyPress={ joinTags }
+                            />
+                        </div>
+                    </div>
+
+                    <input 
+                        type="button" 
+                        value="登録"
+                        className={ Styles.submit }
+                        onClick={ submitBookmark }
+                    />
                 </div>
             </div>
         </>
