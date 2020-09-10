@@ -55,7 +55,7 @@ export const signinWithGithub = async():Promise<[boolean, firebase.User]> => {
  * ログアウト処理
  * 成功したらtrue, 失敗したらfalseを返す。
  */
-export const signout = async():Promise<boolean> => {
+export const logout = async():Promise<boolean> => {
     const bool:boolean = await FB.auth().signOut()
     .then(() => {
         return true;
