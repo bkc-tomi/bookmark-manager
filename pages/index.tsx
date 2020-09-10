@@ -1,7 +1,18 @@
+import { useRouter } from 'next/router';
+import { useEffect } from "react";
+import FB from "../firebase/init";
 import Layout from "../components/layout";
 import { Login } from "../components/login";
 import Styles from "../styles/index.module.css";
 export default function Index() {
+    const router = useRouter();
+    useEffect(() => {
+        FB.auth().onAuthStateChanged((user:firebase.User) => {
+            if (user) {
+                router.push("/[user]", `/${user.uid}`);
+            }
+        });
+    }, []);
     return (
         <Layout>
             <div className={ Styles.outer }>
