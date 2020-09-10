@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Styles from "../styles/AddBookmarkModal.module.css";
+import Styles from "../styles/addBookmarkModal.module.css";
 
 export default function AddBookmarkModal() {
     const [modalCls, setModalCls] = useState(Styles.hide);
