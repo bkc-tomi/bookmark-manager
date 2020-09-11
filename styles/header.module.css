@@ -1,6 +1,8 @@
 .container {
     width: 100%;
     position: fixed;
+    top: 0;
+    left: 0;
     background: linear-gradient(to right, #11998e, #38ef7d);
     z-index: 10000;
 }
@@ -9,6 +11,7 @@
     position: relative;
     background: #aaaaaa;
     opacity: 0;
+    margin: 0.5rem 0;
 }
 
 .title {

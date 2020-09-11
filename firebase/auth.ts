@@ -67,3 +67,13 @@ export const logout = async():Promise<boolean> => {
     return bool;
 }
 
+export const getUser = async() => {
+    let user:firebase.User = null;
+    await FB.auth().onAuthStateChanged((u:firebase.User) => {
+        if (u) {
+            user = u;
+        }
+    });
+    return user;
+}
+

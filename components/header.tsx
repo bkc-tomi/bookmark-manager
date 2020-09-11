@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import FB from "../firebase/init";
+import { getUser } from "../firebase/auth";
 import { Svg } from "./svg";
 import Styles from "../styles/header.module.css";
 import UserIcon from './userIcon';
@@ -10,14 +11,8 @@ export default function Header() {
 
     useEffect(() => {
         (async() => {
-            await FB.auth().onAuthStateChanged((user:firebase.User) => {
-                if (user) {
-                    console.log("login:" + user.displayName);
-                    setUser(user);
-                } else {
-                    console.log("no one logged in.")
-                }
-            });
+            const user = await getUser();
+            setUser(user);
         })();
     }, []);
 
@@ -100,6 +95,12 @@ export default function Header() {
                                 </g>
                             </svg>
                         </Svg>
+                    </div>
+                    <div className={ Styles.icon }>
+                        <UserIcon 
+                            img={ user.photoURL }
+                            size={ 45 }
+                        />
                     </div>
                 </div>
             </>
