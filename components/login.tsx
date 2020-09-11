@@ -38,11 +38,15 @@ export function Login() {
                 ご利用になられているサービスからログインを行うことが出来ます。
                 これらのサービスを利用してログインするので、セキュリティーも万全です。
             </p>
+            <br />
+            <br />
+            <br />
+            <br />
             <LoginButton
                 color={ "#FF7046" }
                 paddingX={ 3 }
                 paddingY={ 1 }
-                margin={ 2 }
+                margin={ 1 }
                 onclick={ handleLoginGoogle }
             >
                 login with Google
@@ -51,7 +55,7 @@ export function Login() {
                 color={ "#00A0F4" }
                 paddingX={ 3 }
                 paddingY={ 1 }
-                margin={ 2 }
+                margin={ 1 }
                 onclick={ handleLoginTwitter }
             >
                 login with Twitter
@@ -60,7 +64,7 @@ export function Login() {
                 color={ "#000000" }
                 paddingX={ 3 }
                 paddingY={ 1 }
-                margin={ 2 }
+                margin={ 1 }
                 onclick={ hadleLoginGithub }
             >
                 login with Github
