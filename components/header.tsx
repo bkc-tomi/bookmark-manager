@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import FB from "../firebase/init";
+import { getUser } from "../firebase/auth";
 import { Svg } from "./svg";
 import Styles from "../styles/header.module.css";
 import UserIcon from './userIcon';
@@ -10,14 +11,8 @@ export default function Header() {
 
     useEffect(() => {
         (async() => {
-            await FB.auth().onAuthStateChanged((user:firebase.User) => {
-                if (user) {
-                    console.log("login:" + user.displayName);
-                    setUser(user);
-                } else {
-                    console.log("no one logged in.")
-                }
-            });
+            const user = await getUser();
+            setUser(user);
         })();
     }, []);
 
@@ -27,8 +22,8 @@ export default function Header() {
                 <header className={ Styles.container }>
                     <div className={ Styles.title }>
                         <Svg
-                            width={ 200 }
-                            height={ 60 }
+                            width={ 180 }
+                            height={ 50 }
                             rotate={ 0 }
                         >
                             <svg viewBox="0 0 1200 350">
@@ -62,15 +57,15 @@ export default function Header() {
                     <div className={ Styles.icon }>
                         <UserIcon 
                             img={ user.photoURL }
-                            size={ 50 }
+                            size={ 45 }
                         />
                     </div>
                 </header>
                 <div className={ Styles.hideContainer }>
-                    <div>
+                <div className={ Styles.title }>
                         <Svg
-                            width={ 200 }
-                            height={ 65 }
+                            width={ 180 }
+                            height={ 50 }
                             rotate={ 0 }
                         >
                             <svg viewBox="0 0 1200 350">
@@ -78,7 +73,7 @@ export default function Header() {
                                 <g id="レイヤー 3 copy" fill="#fff">
                                 <path d="M247.834+66.5638L1184.2+66.5638L1184.2+85.2405L247.834+85.2405L247.834+66.5638Z" strokeLinecap="butt" opacity="1" strokeLinejoin="round"/>
                                 </g>
-                                <g id="レイヤー 2" fill="#000">
+                                <g id="レイヤー 2" fill="#f5af19">
                                 <g opacity="1">
                                 <path d="M141.687+18.4731C139.511+20.5961+138.099+23.4793+137.963+26.6669L136.445+62.3004L183.257+79.5433C185.067+75.6186+187.542+71.9801+190.765+68.8358C206.427+53.5591+232.93+55.3815+249.954+72.8923C266.978+90.4032+268.083+116.978+252.421+132.255C236.76+147.531+210.267+145.72+193.243+128.209C188.669+123.504+185.276+118.142+183.016+112.522L134.067+117.583L132.487+154.685C132.214+161.06+135.825+170.164+140.551+175.024L217.55+254.225L294.56+333.436C299.285+338.296+306.624+338.798+310.971+334.558L381.81+265.46L452.649+196.362C456.997+192.122+456.7+184.751+451.975+179.891L374.965+100.68L297.966+21.479C293.241+16.6187+284.251+12.7613+277.881+12.8649L149.974+14.9514C146.789+15.0032+143.864+16.3501+141.687+18.4731Z" strokeLinecap="butt" opacity="1" strokeLinejoin="round"/>
                                 <path d="M206.055+101.629L16.0718+118.451C11.4571+118.86+7.80356+115.399+7.91135+110.72L9.47277+42.9529C9.58056+38.2745+13.3736+35.6838+17.9447+37.1665L206.134+98.2044C210.705+99.687+210.67+101.22+206.055+101.629Z" strokeLinecap="butt" opacity="1" strokeLinejoin="round"/>
@@ -100,6 +95,12 @@ export default function Header() {
                                 </g>
                             </svg>
                         </Svg>
+                    </div>
+                    <div className={ Styles.icon }>
+                        <UserIcon 
+                            img={ user.photoURL }
+                            size={ 45 }
+                        />
                     </div>
                 </div>
             </>

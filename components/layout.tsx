@@ -4,7 +4,7 @@ import Header from "./header";
  * header, firebase objectを読み込ませる予定
  * 全てのpageをこのコンポーネントでラップする。
  */
-export const SiteTitle = "ブックマークマネージャー(仮)"
+export const SiteTitle = "SIORIN - Bookmark Manager -"
 
 export default function Layout({ children }:{ children: React.ReactNode }) {
     

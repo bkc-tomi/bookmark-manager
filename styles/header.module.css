@@ -1,6 +1,8 @@
 .container {
     width: 100%;
     position: fixed;
+    top: 0;
+    left: 0;
     background: linear-gradient(to right, #11998e, #38ef7d);
     z-index: 10000;
 }
@@ -9,14 +11,15 @@
     position: relative;
     background: #aaaaaa;
     opacity: 0;
+    margin: 0.5rem 0;
 }
 
 .title {
-    margin: 0 0.5rem;
+    margin: 0.2rem 0.5rem;
     display: inline-block;
 }
 
 .icon {
     float: right;
-    margin: 0.3rem 1.5rem;
+    margin: 0.4rem 1rem 0.1rem;
 }

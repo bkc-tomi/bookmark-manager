@@ -31,7 +31,7 @@
 .innerDiv {
     width: 50%;
     min-width: 320px;
-    padding: 3rem 0;
+    padding: 1rem 0;
     background: #eef2f3;
     border-radius: 10px;
     box-shadow: 0px 0px 10px #16776f;
@@ -52,6 +52,63 @@
     border: 1px solid #16776f;
     border-radius: 5px;
 }
+
+.tagDiv {
+    width: 100%;
+    min-width: 300px;
+    line-height: 2.1rem;
+    background: #ffffff;
+    border: 1px solid #16776f;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+.tag {
+    width: 100px;
+    line-height: 20px;
+    border: 1px solid #bbf0be;
+    border-radius: 10px;
+    /* outline: none; */
+}
+.tagBtn {
+    float: left;
+    display: block;
+    background: #eef2f3;
+    border-radius: 10px;
+    box-shadow: #16776f;
+    margin: 0.2rem;
+}
+.tagTitle {
+    float: left;
+}
+.clear {
+    float: left;
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 10px;
+    background: #16776f;
+    color: #eef2f3;
+    padding: 0;
+    margin: 0.3rem;
+    cursor: pointer;
+    text-align: center;
+}
+.submit {
+    width: 90%;
+    padding: 0.5rem;
+    margin: 2rem 0rem 1rem;
+    background: #16776f;
+    color: #eef2f3;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #16776f;
+    opacity: 0.8;
+}
+.submit:hover {
+    opacity: 1;
+}
+
 .hide {
     display: none;
 }
