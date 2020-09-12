@@ -3,8 +3,8 @@ import { FBdb } from "../firebase/init";
 import Layout from "../components/layout";
 import AddBookmarkModal from "../components/addBookmarkModal";
 import { getUser } from "../firebase/auth";
-import { getBookmarks } from "../firebase/database";
-
+import Card from "../components/card";
+import Styles from "../styles/user.module.css";
 import { bookmark } from "../types/types";
 
 export default function User() {
@@ -27,19 +27,18 @@ export default function User() {
     }, []);
     return (
         <Layout>
-            {
-                bookmarks.map((bookmark, key) => {
-                    return (
-                        <div key={ key }>
-                            <a 
-                                href={ bookmark.url }
-                                target="_blank" rel="noopener"
-                                style={{ color: bookmark.themeColor }}
-                            >{ bookmark.title }</a>
-                        </div>
-                    );
-                })
-            }
+            <div className={ Styles.outercontainer }>
+                {
+                    bookmarks.map((bookmark, key) => {
+                        return (
+                            <Card 
+                                bookmark={ bookmark }
+                                key={ key }
+                            />
+                        );
+                    })
+                }
+            </div>
             <AddBookmarkModal />
         </Layout>
     );
