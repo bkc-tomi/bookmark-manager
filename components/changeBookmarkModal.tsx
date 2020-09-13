@@ -115,7 +115,7 @@ export default function ChangeBookmarkModal({
                     <h3>ブックマークの変更</h3>
                     <div className={ Styles.inputDiv }>
                         <label>サイト名</label>
-                        <input className={ Styles.input } type="text" name="site-name" value={ title } onChange={ handleTitle }/> 
+                        <input className={ Styles.input } type="text" name="site-name" value={ title } disabled onChange={ handleTitle }/> 
                     </div>
                     <div className={ Styles.inputDiv }>
                         <label>URL</label>

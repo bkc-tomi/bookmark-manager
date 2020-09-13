@@ -31,12 +31,20 @@ export default function User() {
             <div className={ Styles.outercontainer }>
                 {
                     bookmarks.map((bookmark, key) => {
-                        return (
-                            <Card 
-                                bookmark={ bookmark }
-                                key={ key }
-                            />
-                        );
+                        // let bool:boolean = false;
+                        // bookmark.tags.map(tag => {
+                        //     if (tag.indexOf(state.word)) {
+                        //         bool = true;
+                        //     }
+                        // })
+                        // if (bool) {
+                            return (
+                                <Card 
+                                    bookmark={ bookmark }
+                                    key={ key }
+                                />
+                            );
+                        // }
                     })
                 }
             </div>
