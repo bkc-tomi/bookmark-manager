@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { AppProps } from 'next/app';
 import FB from "../firebase/init";
 import "../styles/globals.css";
-
+import { Provider } from "../components/Store";
+ 
 function App({ Component, pageProps }: AppProps) {
     useEffect(() => {
         (async() => {
@@ -16,7 +17,9 @@ function App({ Component, pageProps }: AppProps) {
         })();
     }, []);
     return (
-        <Component {...pageProps} />
+        <Provider>
+            <Component {...pageProps} />
+        </Provider>
     ); 
     }
 
