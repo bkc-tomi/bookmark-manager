@@ -3,6 +3,9 @@ import { getUser } from "../firebase/auth";
 import Styles from "../styles/addBookmarkModal.module.css";
 import { saveBookmark } from "../firebase/database";
 import { bookmark } from "../types/types";
+import { filt } from "./filt";
+const TinySegmenter = require("tiny-segmenter");
+const segmenter = new TinySegmenter();
 
 export default function AddBookmarkModal() {
     const [modalCls, setModalCls] = useState(Styles.hide);
@@ -14,6 +17,13 @@ export default function AddBookmarkModal() {
     const [tags, setTags]   = useState<string[]>([]); // ブックマークの説明
     const [color, setColor] = useState("#ffffff");
     const [status, setStatus] = useState<"private" | "public">("private");
+
+
+    const generateTags = (event: React.FocusEvent<HTMLTextAreaElement>) => {
+        const segs: string[] = segmenter.segment(event.currentTarget.value);
+        const filteredSegs = segs.filter(seg => !filt.includes(seg.toLowerCase()));
+        setTags(filteredSegs);
+    }
 
     // モーダルを開く
     const handleOpen = () => {
@@ -136,7 +146,7 @@ export default function AddBookmarkModal() {
                     </div>
                     <div className={ Styles.inputDiv }>
                         <label>説明</label>
-                        <textarea className={ Styles.input } rows={ 3 } name="site-desc" value={ desc } onChange={ handleDesc }/>
+                        <textarea className={ Styles.input } rows={ 3 } name="site-desc" value={ desc } onChange={ handleDesc } onBlur={ generateTags }/>
                     </div>
                     <div className={ Styles.inputDiv }>
                         <label>テーマカラー(任意)</label>

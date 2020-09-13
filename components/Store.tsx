@@ -19,7 +19,6 @@ function Reducer(state, action) {
 }
 
 export const Store = createContext({} as ContextValue);
-console.log(Store);
 
 export function Provider({children}:{
     children: React.ReactNode,

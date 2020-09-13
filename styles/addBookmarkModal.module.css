@@ -7,12 +7,10 @@
     height: 50px;
     margin: 0;
     padding: 0;
-    opacity: 0.7;
     z-index: 11000;
-    filter: drop-shadow(0px 2px 1px #000000);
 }
 .btn:hover {
-    opacity: 1;
+    filter: drop-shadow(0px 2px 1px #000000);
 }
 
 .modalCover {

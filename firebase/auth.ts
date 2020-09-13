@@ -7,7 +7,6 @@ import FB, { googleProvider, twitterProvider, githubProvider } from "./init";
 export const signinWithGoogle = async():Promise<[boolean, firebase.User]> => {
     const [bool, user] = await FB.auth().signInWithPopup(googleProvider)
     .then(result => {
-        console.log(result);
         return [true, result.user];
     })
     .catch(error => {
@@ -24,7 +23,6 @@ export const signinWithGoogle = async():Promise<[boolean, firebase.User]> => {
 export const signinWithTwitter = async():Promise<[boolean, firebase.User]> => {
     const [bool, user] = await FB.auth().signInWithPopup(twitterProvider)
     .then(result => {
-        console.log(result);
         return [true, result.user];
     })
     .catch(error => {
@@ -41,7 +39,6 @@ export const signinWithTwitter = async():Promise<[boolean, firebase.User]> => {
 export const signinWithGithub = async():Promise<[boolean, firebase.User]> => {
     const [bool, user] = await FB.auth().signInWithPopup(githubProvider)
     .then(result => {
-        console.log(result);
         return [true, result.user];
     })
     .catch(error => {
