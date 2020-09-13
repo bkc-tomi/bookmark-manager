@@ -1,5 +1,5 @@
 import Styles from "../styles/card.module.css";
-import { Tags } from "../components/tags";
+import { Tags } from "./tags";
 import ChangeBookmarkModal from "../components/changeBookmarkModal";
 import { bookmark } from "../types/types";
 
