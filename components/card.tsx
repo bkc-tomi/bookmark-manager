@@ -1,5 +1,6 @@
 import Styles from "../styles/card.module.css";
 import { Tags } from "../components/tags";
+import ChangeBookmarkModal from "../components/changeBookmarkModal";
 import { bookmark } from "../types/types";
 
 export default function Card({
@@ -35,10 +36,9 @@ export default function Card({
                     >サイトへ</a>
                 </div>
                 <div className={ Styles.btnDivinner }>
-                    <a
-                        target="_blank" rel="noopener"
-                        className={ Styles.btn }
-                    >変更</a>
+                    <ChangeBookmarkModal
+                        bookmark={ bookmark }
+                    />
                 </div>
             </div>
         </div>

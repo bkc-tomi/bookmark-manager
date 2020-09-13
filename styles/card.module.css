@@ -6,6 +6,10 @@
     width: 30%;
     min-width: 350px;
     box-shadow: 0px 0px 10px #16776f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 .inner {
     display: inline-block;
