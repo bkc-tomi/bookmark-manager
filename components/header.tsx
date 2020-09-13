@@ -4,6 +4,7 @@ import FB from "../firebase/init";
 import { Svg } from "./svg";
 import Styles from "../styles/header.module.css";
 import UserIcon from './userIcon';
+import { SearchBox } from "./searchBox";
 
 
 export default function Header() {
@@ -82,6 +83,9 @@ export default function Header() {
                             img={ user.photoURL }
                             size={ 45 }
                         />
+                    </div>
+                    <div className={ Styles.search }>
+                        <SearchBox />
                     </div>
                 </header>
                 <div className={ Styles.hideContainer }>
