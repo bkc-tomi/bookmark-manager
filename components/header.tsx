@@ -211,15 +211,6 @@ export default function Header() {
                         </Svg>
                     </div>
                 </MediaQuery>
-                <div className={ Styles.icon }>
-                    <UserIcon 
-                        img={ user.photoURL }
-                        size={ 45 }
-                    />
-                </div>
-                <div className={ Styles.search }>
-                    <SearchBox />
-                </div>
             </header>
             <div className={ Styles.hideContainer }>
             <MediaQuery query="(max-width: 680px)">
@@ -276,12 +267,6 @@ export default function Header() {
                         </Svg>
                     </div>
                 </MediaQuery>
-                <div className={ Styles.icon }>
-                    <UserIcon 
-                        img={ user.photoURL }
-                        size={ 45 }
-                    />
-                </div>
             </div>
         </>
     );
