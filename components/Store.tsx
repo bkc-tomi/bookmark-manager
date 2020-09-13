@@ -6,7 +6,7 @@ type ContextValue = {
 }
 
 const initState:{ word:string } = {
-    word: "next",
+    word: "",
 };
 
 function Reducer(state, action) {
