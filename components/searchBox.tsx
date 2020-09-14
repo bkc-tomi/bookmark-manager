@@ -3,8 +3,8 @@ import Styles from "../styles/searchbox.module.css";
 import { Store } from "./Store";
 
 export function SearchBox() {
-    const [cls, setCls] = useState(Styles.hide);
-    const { searchWord, setSearchWord } = useContext(Store);
+    const [cls, setCls] = useState("");
+    const { State, setState } = useContext(Store);
 
     const handleOpen = () => {
         if (cls == "") {
@@ -15,7 +15,7 @@ export function SearchBox() {
     }
 
     const changeWord = (event:React.ChangeEvent<{ value: unknown }>) => {
-        setSearchWord({ type: "update", word: event.target.value});
+        setState({ type: "update_word", word: event.target.value});
     }
     return (
             <div className={ Styles.container }>
@@ -23,7 +23,7 @@ export function SearchBox() {
                     className={ Styles.searchword + " " + cls }
                     type="text"
                     placeholder="タグ検索"
-                    value={ searchWord.word }
+                    value={ State.word }
                     onChange={ changeWord }
                 />
                 <div 

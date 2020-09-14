@@ -1,26 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import MediaQuery from "react-responsive";
 import FB from "../firebase/init";
 import { Svg } from "./svg";
 import Styles from "../styles/header.module.css";
 import UserIcon from './userIcon';
-import { SearchBox } from "./searchBox";
+import { Store } from "../components/Store";
 
 
 export default function Header() {
-    const [user, setUser] = useState<firebase.User>();
+    // const [user, setUser] = useState<firebase.User>();
+    const { State, setState } = useContext(Store);
 
     useEffect(() => {
         (async() => {
             await FB.auth().onAuthStateChanged((user:firebase.User) => {
                 if (user) {
-                    setUser(user);
+                    setState({type: "update_user", user: user});
                 }
             });
         })();
     }, []);
 
-    if (user) {
+    if (State.user) {
         return (
             <>
                 <header className={ Styles.container }>
@@ -80,12 +81,9 @@ export default function Header() {
                     </MediaQuery>
                     <div className={ Styles.icon }>
                         <UserIcon 
-                            img={ user.photoURL }
+                            img={ State.user.photoURL }
                             size={ 45 }
                         />
-                    </div>
-                    <div className={ Styles.search }>
-                        <SearchBox />
                     </div>
                 </header>
                 <div className={ Styles.hideContainer }>
@@ -145,7 +143,7 @@ export default function Header() {
                     </MediaQuery>
                     <div className={ Styles.icon }>
                         <UserIcon 
-                            img={ user.photoURL }
+                            img={ State.user.photoURL }
                             size={ 45 }
                         />
                     </div>

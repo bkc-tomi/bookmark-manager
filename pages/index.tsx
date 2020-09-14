@@ -4,6 +4,7 @@ import FB from "../firebase/init";
 import Layout from "../components/layout";
 import { Login } from "../components/login";
 import Styles from "../styles/index.module.css";
+
 export default function Index() {
     const router = useRouter();
     useEffect(() => {
