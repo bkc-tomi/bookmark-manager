@@ -15,7 +15,13 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    padding: 1rem;
 }
+
+.title {
+    font-size: 3vw;
+}
+
 .imgRight {
     width: 60%;
     margin-right: 3rem;
@@ -54,10 +60,12 @@
     align-items: center;
 }
 
-
 @media screen and (max-width:680px) { 
     .articleArea {
         width: 100%;
+    }
+    .title {
+        font-size: 5vw;
     }
     .loginArea {
         width: 100%;
