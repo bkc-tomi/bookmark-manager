@@ -40,8 +40,6 @@ export function Login() {
             </p>
             <br />
             <br />
-            <br />
-            <br />
             <LoginButton
                 color={ "#FF7046" }
                 paddingX={ 3 }
