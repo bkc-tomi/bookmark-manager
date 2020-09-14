@@ -4,7 +4,6 @@ import FB from "../firebase/init";
 import { Svg } from "./svg";
 import Styles from "../styles/header.module.css";
 import UserIcon from './userIcon';
-import { SearchBox } from "./searchBox";
 import { Store } from "../components/Store";
 
 

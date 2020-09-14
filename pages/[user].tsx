@@ -49,6 +49,9 @@ export default function User() {
     return (
         <Layout>
             <div className={ Styles.outercontainer }>
+                <h4>- My Page -</h4>
+            </div>
+            <div className={ Styles.outercontainer }>
                 {
                     bookmarks.map((bookmark, key) => {
                         let bool:boolean = false;

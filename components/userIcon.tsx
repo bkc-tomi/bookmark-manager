@@ -10,7 +10,7 @@ export default function UserIcon({
     img: string,
     size: number,
 }) {
-    const { State } = useContext(Store);
+    const { State, setState } = useContext(Store);
     const [cls, setCls] = useState(Styles.hide);
     const router = useRouter();
 
@@ -18,6 +18,7 @@ export default function UserIcon({
         const bool = await logout();
         if (bool) {
             console.log("logout");
+            setState({ type: "update_user", user: null});
             router.push("/");
         } else {
             alert("ログアウトに失敗しました。");
@@ -33,24 +34,31 @@ export default function UserIcon({
     }
     return (
         <div className={ Styles.contaniner }>
-            <div>
+            <div 
+                className={ Styles.icon }
+                onClick={ toggleModal } 
+            >
                 <img 
                     src={ img }
                     style={{
                         width: `${size}px`,
                         height: `${size}px`,
                         borderRadius: "50%",
-                    }} 
-                    onClick={ toggleModal } 
+                    }}
                 />
+                <p className={ Styles.iconMenu }>menu</p>
             </div>
             <div className={ Styles.modal + " " + cls }>
                 <Link href="[user]" as={ State.user.uid }>
-                    <p>my page</p>
+                    <p>My Page</p>
                 
                 </Link>
                 <Link href="global-search">
                     <p>Global Search</p>
+                
+                </Link>
+                <Link href="how-to">
+                    <p>使い方</p>
                 
                 </Link>
                 <p

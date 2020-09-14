@@ -2,8 +2,9 @@ import { useContext, useState } from "react";
 import Styles from "../styles/globalsearch.module.css";
 import Layout from "../components/layout";
 import { Store } from "../components/Store";
-import Card from "../components/card";
+import GlobalCard from "../components/globalCard";
 import { getSearchResult } from "../firebase/database";
+import { bookmark } from "../types/types";
 
 export default function SearchResult() {
     const [result, setResult] = useState([]);
@@ -15,14 +16,13 @@ export default function SearchResult() {
 
     const getResult = async() => {
         const result = await getSearchResult(State.word.toLowerCase());
-        console.log(result);
         setResult(result);
     }
 
     return (
         <Layout>
             <div className={ Styles.container }>
-                <h5>Global Search: result</h5>
+                <h4>- Global Search -</h4>
                 <div className={ Styles.searchContainer }>
                     <input 
                         className={ Styles.searchbox } type="text" placeholder="タグ検索"
@@ -36,18 +36,18 @@ export default function SearchResult() {
                         検索
                     </div>
                 </div>
-                <div>
-                    {
-                        result.map((r, key) => {
-                            return (
-                                <Card
-                                    key={ key }
-                                    bookmark={ r }
-                                />
-                            )
-                        })
-                    }
-                </div>
+            </div>
+            <div className={ Styles.resultContainer }>
+                {
+                    result.map((r, key) => {
+                        return (
+                            <GlobalCard
+                                key={ key }
+                                bookmark={ r as bookmark }
+                            />
+                        )
+                    })
+                }
             </div>
         </Layout>
     );
