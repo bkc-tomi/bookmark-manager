@@ -16,17 +16,31 @@
     align-items: center;
     z-index: 1000;
 }
-
-.pcUser {
-    width: 50%;
-    position: absolute;
-    bottom: 5%;
-    right: 0;
-    z-index: -10;
-    opacity: 0.8;
-    transform: rotate3d(10, 20, 0, 30deg)
+.imgRight {
+    width: 60%;
+    margin-right: 3rem;
+    margin-left: auto;
+    max-width: 300px;
+}
+.imgLeft {
+    width: 60%;
+    margin-left: 3rem;
+    margin-right: auto;
+    max-width: 300px;
 }
 
+.hanten {
+    transform: scale(-1, 1);
+}
+.head {
+    margin-top: 5rem;
+}
+.article {
+    margin: 2rem 0;
+    max-width: 700px;
+    line-height: 1.5rem;
+    text-align: center;
+}
 .loginArea {
     width: 350px;
 }

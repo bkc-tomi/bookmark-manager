@@ -4,4 +4,10 @@
 
 .innerContainer {
     width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+.innerContainer ul {
+    list-style: none;
 }
