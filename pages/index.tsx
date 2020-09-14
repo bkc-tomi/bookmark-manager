@@ -11,7 +11,7 @@ export default function Index() {
     useEffect(() => {
         FB.auth().onAuthStateChanged((user:firebase.User) => {
             if (user) {
-                router.push("/[user]", `/${user.uid}`);
+                router.push("/how-to");
             }
         });
     }, []);
