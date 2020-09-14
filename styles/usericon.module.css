@@ -13,7 +13,11 @@
     z-index: 21000;
 }
 .modal p {
+    opacity: 0.8;
     cursor: pointer;
+}
+.modal p:hover {
+    opacity: 1;
 }
 
 .hide {

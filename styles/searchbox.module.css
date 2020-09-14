@@ -1,11 +1,8 @@
-.container {
-
-}
-
 .searchword {
     float: left;
     height: 30px;
-    width: 180px;
+    width: calc(100% - 50px);
+
     margin: 1rem 0.5rem;
     border: 1px solid #16776f;
     border-radius: 5px;
