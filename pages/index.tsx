@@ -19,6 +19,7 @@ export default function Index() {
         <Layout>
             <div className={ Styles.outer }>
                 <div className={ Styles.articleArea }>
+
                     <div>
                         <Svg
                             width={ 300 }

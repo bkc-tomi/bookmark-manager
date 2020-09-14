@@ -15,10 +15,15 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    padding: 1rem;
+}
+
+.title {
+    font-size: 3vw;
 }
 
 .pcUser {
-    width: 50%;
+    width: 40%;
     position: absolute;
     bottom: 5%;
     right: 0;
@@ -40,10 +45,12 @@
     align-items: center;
 }
 
-
 @media screen and (max-width:680px) { 
     .articleArea {
         width: 100%;
+    }
+    .title {
+        font-size: 5vw;
     }
     .loginArea {
         width: 100%;
