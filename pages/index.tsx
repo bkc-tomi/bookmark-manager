@@ -11,7 +11,7 @@ export default function Index() {
     useEffect(() => {
         FB.auth().onAuthStateChanged((user:firebase.User) => {
             if (user) {
-                router.push("/[user]", `/${user.uid}`);
+                router.push("/how-to");
             }
         });
     }, []);
@@ -55,31 +55,40 @@ export default function Index() {
                         </svg>
                         </Svg>
                     </div>
-                    <h3>ブックマークを快適に使用</h3>
-                    <p>
+                    <h3 className={ Styles.head }>ブックマークを快適に使用</h3>
+                    <p className={ Styles.article }>
                         SHIORINはブックマークを管理するサイトです。
                         調べごとをしていてブックマークが大量になり、後から
-                        <span>「このサイトなんだっけ？」</span>
+                        <br />
+                        <span style={{ fontSize: "20px" }}>「このサイトなんだっけ？」</span>
+                        <br />
                         とわからなくなったことはありませんか？
                         このサイトはブックマークを登録する際にそのサイトの情報やなぜそのサイトを検索したかの
                         説明と説明のキーワードをタグとして一緒に保存します。
+                        <br />
                         なので後からブックマークを探す時も楽ちんです。
                     </p>
-                    <h3>解決策を持っているサイトの発見を快適に使用</h3>
-                    <p>
+                    <img className={ Styles.imgRight } src="/school_toshokan_hondana.png" />
+                    <h3 className={ Styles.head }>解決策を持っているサイトの発見を快適に使用</h3>
+                    <p className={ Styles.article }>
                        また、他のユーザーが公開しているブックマークを検索することもできます。
                        同じ問題を検索したユーザーいれば、Googleで検索するよりも早く自分に適したサイトを見つけることができるかも。 
                     </p>
-                    <h3>安心して使おう</h3>
-                    <p>
+                    <img className={ Styles.imgLeft + " " + Styles.hanten } src="/group_kids.png" />
+                    <h3 className={ Styles.head }>安心して使おう</h3>
+                    <p className={ Styles.article }>
                         認証とデータベースには、Googleが運営しているFirebaseを使用しています。
                         認証は、他のサイトのアカウントを使用する外部認証OAuthを使っています。
                         他のサイトのアカウントを使用するとはいえ、ユーザーネームやアイコンなどの一部の情報のみ
                         なので、個人情報が漏れる心配はありません。
                         セキュリティ面はバッチリです。
                     </p>
-                    <h3>使用している技術</h3>
-                    <ul>
+                    <img className={ Styles.imgRight } src="/anshin.png" />
+                    <h3 className={ Styles.head }>使用している技術</h3>
+                    <ul 
+                        className={ Styles.article }
+                        style={{ textAlign: "left" }}    
+                    >
                         <li>typeScript:静的な型で安全にできるjavaScriptのトランスパイル言語</li>
                         <li>next.js:reactを使用したフレームワーク</li>
                         <li>react:UIを構築しモダンなサイトを作れるライブラリ</li>
@@ -87,6 +96,7 @@ export default function Index() {
                         <li>tiny-segmenter:文章を単語に分ける形態素解析ツールライブラリ</li>
                         <li>自分の脳:これらのツールを使用してこのアプリを構築するのに使用</li>
                     </ul>
+                    <img className={ Styles.imgLeft } src="/gijutsusyo.png" />
                 </div>
                 <div className={ Styles.loginArea }>
                     <div className={ Styles.loginDiv}>
