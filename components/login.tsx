@@ -8,7 +8,7 @@ export function Login() {
     const handleLoginGoogle = async() => {
         const [loginCheck, user] = await signinWithGoogle();
         if (loginCheck) {
-            router.push("/[user]", `/${ user.uid }`);
+            router.push("/how-to");
         } else {
             alert("ログイン処理が上手く行かなかったようです。もう一度お試しください。");
         }
@@ -16,7 +16,7 @@ export function Login() {
     const handleLoginTwitter = async() => {
         const [loginCheck, user] = await signinWithTwitter();
         if (loginCheck) {
-            router.push("/[user]", `/${ user.uid }`);
+            router.push("/how-to");
         } else {
             alert("ログイン処理が上手く行かなかったようです。もう一度お試しください。");
         }
@@ -24,7 +24,7 @@ export function Login() {
     const hadleLoginGithub = async() => {
         const [loginCheck, user] = await signinWithGithub();
         if (loginCheck) {
-            router.push("/[user]", `/${ user.uid }`);
+            router.push("/how-to");
         } else {
             alert("ログイン処理が上手く行かなかったようです。もう一度お試しください。");
         }
@@ -38,8 +38,6 @@ export function Login() {
                 ご利用になられているサービスからログインを行うことが出来ます。
                 これらのサービスを利用してログインするので、セキュリティーも万全です。
             </p>
-            <br />
-            <br />
             <br />
             <br />
             <LoginButton

@@ -7,11 +7,11 @@ export function Tags({
 }:{
     tags: string[]
 }) {
-    const { searchWord, setSearchWord } = useContext(Store);
+    const { State, setState } = useContext(Store);
 
     const setWord = (event:React.MouseEvent<HTMLDivElement>) => {
         // @ts-ignore
-        setSearchWord({ type: "update", word: event.target.innerHTML as string});
+        setState({ type: "update_word", word: event.target.innerHTML as string});
     }
     return (
         <div className={ Styles.container }>

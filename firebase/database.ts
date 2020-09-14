@@ -19,6 +19,10 @@ export async function saveBookmark(uid: string, title: string, bookmark:bookmark
     return bool;
 }
 
+/**
+ * 指定したユーザーのブックマークを全て取得する。
+ * @param uid 
+ */
 export async function getBookmarks(uid: string):Promise<bookmark[]> {
     let bookmarks: bookmark[] = [];
     await FBdb.collection("users").doc(uid).collection("bookmarks").get()
@@ -32,4 +36,15 @@ export async function getBookmarks(uid: string):Promise<bookmark[]> {
         console.log(error);
     });
     return bookmarks;
+}
+
+export async function getSearchResult(word: string) {
+    let result = [];
+    await FBdb.collectionGroup("bookmarks").where("status", "==", "public").where("tags", "array-contains", word).get()
+    .then(snapshot => {
+        snapshot.docs.map(doc => {
+            result.push(doc.data());
+        })
+    });
+    return result;
 }
