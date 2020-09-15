@@ -3,7 +3,7 @@ import Styles from "../styles/howto.module.css";
 export default function HowTo() {
     return (
         <Layout>
-            <div className={ Styles.outercontainer }>
+            <div className={ Styles.outerContainer }>
                 <div className={ Styles.innerContainer }>
                     <h4>○ menu icon</h4>
                     <p>
@@ -20,6 +20,7 @@ export default function HowTo() {
                     </ul>
                     <img 
                         src="/menuicon.png"
+                        className={ Styles.marginL }
                         style={{ width: "200px"}}    
                     />
                 </div>
@@ -29,21 +30,23 @@ export default function HowTo() {
                         自分のブックマークの表示・登録・変更ができるページです。
                     </p>
                     <ul>
-                        <li>
+                        <li className={ Styles.list }>
                             <h5>登録</h5>
                             <p>
                                 登録はMy Pageから行います。マイページ右下の＋マークをクリックすると、
                                 登録用のフォームが出てきます。必要事項を入力して登録を押せば完了です。
                                 公開にチェックを入れると他のユーザーから検索できるようになります。
                             </p>
-                            <img 
-                                src="/submit.png"
-                                style={{ width: "320px"}}    
-                            />
-                            <img 
-                                src="/submit2.png"
-                                style={{ width: "320px"}}    
-                            />
+                            <div className={ Styles.imgBox }>
+                                <img 
+                                    src="/submit.png"
+                                    style={{ width: "310px", margin: "2px"}}    
+                                />
+                                <img 
+                                    src="/submit2.png"
+                                    style={{ width: "310px", margin: "2px"}}    
+                                />
+                            </div>
                             <p>
                                 説明を入力すると説明の内容から自動でタグが生成されます。
                                 精度は低いので不必要なものは削除し、必要なものは付け足してください。
@@ -62,17 +65,18 @@ export default function HowTo() {
                                 またタグをクリックすると検索ボックスにタグの文字が入り、同様のタグのついたサイトを検索することもできます。
                             </p>
                         </li>
-                        <li>
-                            <h5>変更</h5>
+                        <li className={ Styles.list }>
+                            <h5>変更＆サイトを開く</h5>
                             <p>
                                 変更のボタンを押すと内容を編集することができます。
                             </p>
-                        </li>
-                        <li>
-                            <h5>ブックマークしたサイトを開く</h5>
                             <p>
                                 「サイトへ」ボタンでブックマークしたサイトを開きます。
                             </p>
+                            <img 
+                                src="/bm-card.png"
+                                style={{ width: "320px"}}
+                            />
                         </li>
                     </ul>
                 </div>
@@ -84,12 +88,18 @@ export default function HowTo() {
                         見つけることができるかも知れません。
                         <br />
                         検索ボックスに入力した文字列と一致するタグのブックマークを検索し表示します。
+                        <br />
+                        今のところMy Pageと異なり検索ワードと完全一致したタグを持つブックマークしかヒットしません。
                     </p>
+                    <img 
+                        src="/global-search.png"
+                        style={{ width: "320px"}}
+                    />
                 </div>
                 <div className={ Styles.innerContainer }>
                     <h4>○ logout</h4>
                     <p>
-                        ログアウトしたい時に押してください。
+                        ログアウトしたい時に押してください。ログアアウトに成功するとトップページに戻ります。
                     </p>
                 </div>
                 

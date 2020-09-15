@@ -51,15 +51,15 @@ export default function UserIcon({
             <div className={ Styles.modal + " " + cls }>
                 <Link href="[user]" as={ State.user.uid }>
                     <p>My Page</p>
-                
                 </Link>
                 <Link href="global-search">
                     <p>Global Search</p>
-                
                 </Link>
                 <Link href="how-to">
                     <p>使い方</p>
-                
+                </Link>
+                <Link href="contact">
+                    <p>お問い合わせ</p>
                 </Link>
                 <p
                     onClick={ hadnleLogout }
