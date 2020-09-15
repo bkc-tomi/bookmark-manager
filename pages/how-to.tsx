@@ -16,12 +16,12 @@ export default function HowTo() {
                         <li>My page</li>
                         <li>Global Search</li>
                         <li>使い方</li>
+                        <li>お問い合わせ</li>
                         <li>logout</li>
                     </ul>
                     <img 
                         src="/menuicon.png"
-                        className={ Styles.marginL }
-                        style={{ width: "200px"}}    
+                        className={ Styles.img }  
                     />
                 </div>
                 <div className={ Styles.innerContainer }>
@@ -40,11 +40,11 @@ export default function HowTo() {
                             <div className={ Styles.imgBox }>
                                 <img 
                                     src="/submit.png"
-                                    style={{ width: "310px", margin: "2px"}}    
+                                    className={ Styles.rowimg }   
                                 />
                                 <img 
                                     src="/submit2.png"
-                                    style={{ width: "310px", margin: "2px"}}    
+                                    className={ Styles.rowimg }     
                                 />
                             </div>
                             <p>
@@ -75,7 +75,7 @@ export default function HowTo() {
                             </p>
                             <img 
                                 src="/bm-card.png"
-                                style={{ width: "320px"}}
+                                className={ Styles.img }
                             />
                         </li>
                     </ul>
@@ -93,7 +93,7 @@ export default function HowTo() {
                     </p>
                     <img 
                         src="/global-search.png"
-                        style={{ width: "320px"}}
+                        className={ Styles.img }
                     />
                 </div>
                 <div className={ Styles.innerContainer }>
