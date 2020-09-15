@@ -15,7 +15,7 @@ export default function AddBookmarkModal() {
     const [desc, setDesc]   = useState(""); // ブックマークの説明
     const [tag, setTag]     = useState("");
     const [tags, setTags]   = useState<string[]>([]); // ブックマークの説明
-    const [color, setColor] = useState("#ffffff");
+    const [color, setColor] = useState("#000000");
     const [status, setStatus] = useState<"private" | "public">("private");
 
 
