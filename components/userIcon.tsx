@@ -49,7 +49,7 @@ export default function UserIcon({
                 <p className={ Styles.iconMenu }>menu</p>
             </div>
             <div className={ Styles.modal + " " + cls }>
-                <Link href="[user]" as={ State.user.uid }>
+                <Link href="[user]" as={ State.user.displayName }>
                     <p>My Page</p>
                 </Link>
                 <Link href="global-search">
