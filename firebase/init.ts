@@ -8,7 +8,6 @@ export let FBstorage:firebase.storage.Storage;
 export let googleProvider:firebase.auth.GoogleAuthProvider;
 export let twitterProvider:firebase.auth.TwitterAuthProvider;
 export let githubProvider:firebase.auth.GithubAuthProvider;
-export let FBfunction:firebase.functions.Functions;
 
 try {
     const firebaseConfig = {
@@ -31,7 +30,6 @@ try {
     googleProvider  = new firebase.auth.GoogleAuthProvider();
     twitterProvider = new firebase.auth.TwitterAuthProvider();
     githubProvider  = new firebase.auth.GithubAuthProvider();
-    FBfunction      = firebase.functions();
     FB              = firebase;
     console.log("firebase init!");
 } catch (error) {

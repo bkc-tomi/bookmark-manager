@@ -6,3 +6,8 @@ export type bookmark = {
     themeColor: string,
     status: "private" | "public",
 }
+
+export type msg = {
+    mail: string,
+    message: string,
+}

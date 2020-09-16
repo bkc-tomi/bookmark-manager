@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Layout from "../components/layout";
-import { FBfunction } from "../firebase/init";
 import Styles from "../styles/contact.module.css";
 
 export default function Contact() {
@@ -15,52 +14,29 @@ export default function Contact() {
     }
 
     const submitMessage = async() => {
-        const data = {
-            mail: mail,
-            message: text,
-        };
-        const sendMessage = FBfunction.httpsCallable("sendMessage");
-        sendMessage(data)
-        .then(result => {
-            console.log(result);
-            setMail("");
-            setText("");
-            alert("送信しました。");
-        })
-        .catch(error => {
-            console.log(error);
-            alert("送信に失敗しました。");
-        });
+        
     }
     
     return (
         <Layout>
             <div className={ Styles.outerContainer }>
                 <div className={ Styles.innerContainer }>
-                    <h3>お問い合わせ</h3>
-                    <p>問題や要望があればこちらにお願いします。</p>
-                    <div className={ Styles.inputDiv }>
-                        <label>メールアドレス
-                            <span style={{ fontSize: "10px" }}>
-                                (折り返しの返事が必要であれば入力してください。)
-                            </span>
-                        </label>
-                        <input 
-                            type="email" className={ Styles.input } 
-                            value={ mail } onChange={ changeMail }/>
-                    </div>
-
-                    <div className={ Styles.inputDiv }>
-                        <label>内容</label>
-                        <textarea 
-                            className={ Styles.input } rows={ 4 }
-                            value={ text } onChange={ changeText }
-                        ></textarea>
-                    </div>
-                    <div className={ Styles.btn }>送信</div>
+                    <p>メールによるお問い合わせは以下からお願いします。</p>
+                    <a 
+                        href="https://tayori.com/form/2940f19847246f9baccfe55bdaeec27672a04f02"
+                        target="_blank" rel="noopener"
+                        className={ Styles.btn }
+                    >
+                        お問い合わせフォームを開く
+                    </a>
                 </div>
-                <div>
-                    twitter
+                <div className={ Styles.innerContainer }>
+                    <p>TwitterからDMでのお問い合わせも受け付けております。</p>
+                    <a
+                        href="https://twitter.com/bkc30002594"
+                        target="_blank" rel="noopener"
+                        className={ Styles.btn }
+                    >Twitterを開く</a>
                 </div>
             </div>
         </Layout>
