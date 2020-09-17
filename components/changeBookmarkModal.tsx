@@ -73,18 +73,19 @@ export default function ChangeBookmarkModal({
     const submitBookmark = async() => {
         setBtnAcitve(false);
         const user = await getUser();
-        const bookmark:bookmark = {
+        const newbookmark:bookmark = {
             title: title,
             url:   url,
             description: desc,
             tags: tags,
             themeColor: color,
             status: status,
+            visitCount: bookmark.visitCount,
         }
         // console.log(bookmark);
         if (user) {
             // console.log(user);
-            const bool = await saveBookmark(user.uid, title, bookmark);
+            const bool = await saveBookmark(user.uid, title, newbookmark);
             if (bool) {
                 alert("保存しました。");
                 router.reload();

@@ -84,6 +84,7 @@ export default function AddBookmarkModal() {
             tags: tags,
             themeColor: color,
             status: status,
+            visitCount: 0,
         }
         // console.log(bookmark);
         if (user) {

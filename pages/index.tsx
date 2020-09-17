@@ -84,6 +84,14 @@ export default function Index() {
                         セキュリティ面はバッチリです。
                     </p>
                     <img className={ Styles.imgRight } src="/anshin.png" />
+                    <h3 className={ Styles.head }>変更</h3>
+                    <ul
+                        className={ Styles.article }
+                        style={{ textAlign: "left" }} 
+                    >
+                        <li>2020/09/17:My Pageのブックマークを訪問回数でソートして訪問回数の多いものを上から表示するようにしました。</li>
+                    </ul>
+                    
                     <h3 className={ Styles.head }>使用している技術</h3>
                     <ul 
                         className={ Styles.article }
