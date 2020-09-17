@@ -19,7 +19,7 @@ export default function User() {
         (async() => {
             await FB.auth().onAuthStateChanged((user:firebase.User) => {
                 if (user) {
-                    const unsubscribe = FBdb.collection("users").doc(user.uid).collection("bookmarks")
+                    const unsubscribe = FBdb.collection("users").doc(user.uid).collection("bookmarks").orderBy("visitCount", "desc")
                     .onSnapshot(snapshots => {
                         const bms:bookmark[] = [];
                         snapshots.forEach(doc => {

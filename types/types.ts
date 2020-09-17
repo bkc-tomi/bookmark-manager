@@ -5,6 +5,7 @@ export type bookmark = {
     tags: string[],
     themeColor: string,
     status: "private" | "public",
+    visitCount: number,
 }
 
 export type msg = {

@@ -25,7 +25,7 @@ export async function saveBookmark(uid: string, title: string, bookmark:bookmark
  */
 export async function getBookmarks(uid: string):Promise<bookmark[]> {
     let bookmarks: bookmark[] = [];
-    await FBdb.collection("users").doc(uid).collection("bookmarks").get()
+    await FBdb.collection("users").doc(uid).collection("bookmarks").orderBy("visitCount").get()
     .then(querySnapshot => {
         querySnapshot.forEach(doc => {
             // console.log(doc.data());
